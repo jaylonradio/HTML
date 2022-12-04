@@ -1,0 +1,547 @@
+
+
+		<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<head>
+
+
+<font color="#FF3A00">  
+
+
+<style>
+body {
+  overflow: hidden; /* Hide scrollbars */
+}
+</style>
+  <style>
+      .container {
+        display: flex;
+        align-items: RIGHT;
+        justify-content: CENTER
+      }
+      img {
+        max-width: 100%
+      }
+      .image {
+        flex-basis: 40%
+      }
+      .text {
+        font-size: 20px;
+        padding-left: 20px;
+          font-weight: bold;
+      }
+    </style>  
+
+<script type="text/javascript">
+
+/* NOT CURRENTLY USED
+var thedate = new Date();
+var dayofweek = thedate.getDay();
+var hourofday = thedate.getHours();
+
+var GMT = new Date().getTimezoneOffset();
+var offsetGMT = -5 * new Date().getTimezoneOffset()/60;
+*/
+
+// Sun=0  1 2 3 4 5 Sat=6
+var DayOfWeek = new Array('Weekend','Monday','Tuesday','Wednesday','Thursday','Friday','Weekend');
+
+var NoShow = 'No Show Scheduled<br />for KSWH';
+var DH = new Array (7);
+for (d=0; d<7; d++) {
+DH[d] = new Array (24);
+for (h=0; h<24; h++) { DH[d][h] = ''; }
+}
+DH[6][00] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p> ';
+
+
+
+
+DH[6][01] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p>';
+
+
+DH[6][02] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p>';
+
+DH[6][03] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p>';
+
+DH[6][04] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p>';
+
+DH[6][05] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p>';
+
+DH[6][06] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong>';
+
+DH[6][07] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p>';
+
+DH[6][08] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p>'; 
+
+DH[6][09] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 10:00AM</strong></p>';
+
+DH[6][10] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Corine Loraine</strong></p><p><strong>10:00AM - 1:00PM</strong></p';
+
+DH[6][11] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Corine Loraine</strong></p><p><strong>10:00AM - 1:00PM</strong></p';
+
+
+DH[6][12] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Corine Loraine</strong></p><p><strong>10:00AM - 1:00PM</strong></p';
+
+DH[6][13] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> DJ Jay</strong></p><p><strong>1:00PM - 7:00PM</strong></p';
+
+
+DH[6][14] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> DJ Jay </strong></p><p><strong>1:00PM - 7:00PM</strong></p';
+
+DH[6][15] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>DJ Jay</strong></p><p><strong>1:00PM - 7:00PM</strong></p>'; 
+
+
+DH[6][16] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>DJ Jay</strong></p><p><strong>1:00PM - 7:00PM</strong></p>';
+
+DH[6][17] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>DJ Jay</strong></p><p><strong>1:00PM - 7:00PM</strong></p>';
+
+DH[6][18] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>DJ Jay</strong></p><p><strong>1:00PM - 7:00PM</strong></p>';
+
+DH[6][19] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>DJ Jay Saturday Night Show</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[6][20] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>DJ Jay Saturday Night Show</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+
+DH[6][21] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>DJ Jay Saturday Night Show</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[6][22] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>DJ Jay Saturday Night Show</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[6][23] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>DJ Jay Saturday Night Show</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[6][24] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 7:00AM</strong></p>';
+
+
+
+
+
+
+
+
+
+DH[0][00]='<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text">  <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong>';
+
+
+DH[0][01] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text">  <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong>';
+
+
+
+DH[0][02] = '<div class="image"><div class="container"> <p><img src="\https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[0][03] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[0][04] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong>';
+
+DH[0][05] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong>';
+
+DH[0][06] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/HBP4bhS/60216ffcb076bb67d4441301-1.webp" alt="" width="126" height="126" /><div class="text">  <p><strong>The Ramsey Show</strong></p><p><strong>6:00AM - 9:00AM</strong>';
+
+DH[0][07] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/HBP4bhS/60216ffcb076bb67d4441301-1.webp" alt="" width="126" height="126" /><div class="text">  <p><strong>The Ramsey Show</strong></p><p><strong>6:00AM - 9:00AM</strong>';
+
+DH[0][08] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/HBP4bhS/60216ffcb076bb67d4441301-1.webp" alt="" width="126" height="126" /><div class="text">  <p><strong>The Ramsey Show</strong></p><p><strong>6:00AM - 9:00AM</strong>'; 
+
+DH[0][09] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text">  <p><strong>Gospel Music With Wille</strong></p><p><strong>9:00AM - 12:00PM</strong>';
+
+DH[0][10] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text">  <p><strong>Gospel Music With Wille</strong></p><p><strong>9:00AM - 12:00PM</strong>';
+
+
+
+DH[0][11] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text">  <p><strong>Gospel Music With Wille</strong></p><p><strong>9:00AM - 12:00PM</strong>';
+
+
+
+DH[0][12] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Corine Loraine</strong></p><p><strong>12:00PM - 7:00PM</strong></p>';
+
+DH[0][13] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Corine Loraine</strong></p><p><strong>12:00PM - 7:00PM</strong></p>';
+
+
+DH[0][14] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Corine Loraine</strong></p><p><strong>12:00PM - 7:00PM</strong></p>';
+
+DH[0][15] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Corine Loraine</strong></p><p><strong>12:00PM - 7:00PM</strong></p>';
+
+DH[0][16] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Corine Loraine</strong></p><p><strong>12:00PM - 7:00PM</strong></p>';
+
+DH[0][17] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Corine Loraine</strong></p><p><strong>12:00PM - 7:00PM</strong></p>';
+
+DH[0][18] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Corine Loraine</strong></p><p><strong>12:00PM - 7:00PM</strong></p>';
+
+DH[0][19] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal&nbsp;</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[0][20] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal&nbsp;</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[0][21] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal&nbsp;</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+
+DH[0][22] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal&nbsp;</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[0][23] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal&nbsp;</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[0][24] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text">97.5 R&B';
+
+
+
+
+
+DH[1][01] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+DH[1][02] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[1][03] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[1][04] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[1][05] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[1][06] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+DH[1][07] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[1][08] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[1][09] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+DH[1][10] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[1][11] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+
+DH[1][12] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[1][13] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+DH[1][14] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[1][15] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[1][16] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[1][17] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>	';
+
+DH[1][18] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[1][19] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[1][20] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[1][21] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[1][22] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[1][23] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[1][24] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+
+
+
+
+
+
+
+DH[2][01] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+DH[2][02] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[2][03] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[2][04] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[2][05] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[2][06] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+DH[2][07] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[2][08] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[2][09] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[2][10] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[2][11] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+
+DH[2][12] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[2][13] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+DH[2][14] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[2][15] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[2][16] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[2][17] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>	';
+
+DH[2][18] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[2][19] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[2][20] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[2][21] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[2][22] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[2][23] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[2][24] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+
+
+DH[3][01] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+DH[3][02] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[3][03] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[3][04] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[3][05] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[3][06] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+DH[3][07] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[3][08] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[3][09] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[3][10] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[3][11] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+
+DH[3][12] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[3][13] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+DH[3][14] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[3][15] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[3][16] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[3][17] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>	';
+
+DH[3][18] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[3][19] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[3][20] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[3][21] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[3][22] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[3][23] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[3][24] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+
+
+
+DH[4][01] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+DH[4][02] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[4][03] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[4][04] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[4][05] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+DH[4][06] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+DH[4][07] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[4][08] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[4][09] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[4][07] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[4][08] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[4][09] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+
+DH[4][10] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[4][11] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+
+DH[4][12] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[4][13] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+DH[4][14] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[4][15] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[4][16] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[4][17] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>	';
+
+DH[4][18] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/RhmdS19/IMG-2320.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+
+
+DH[4][19] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[4][20] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[4][21] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[4][22] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[4][23] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[4][24] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+
+
+DH[5][01] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+DH[5][02] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+
+
+DH[5][03] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM To 6:00AM</strong></p>';
+
+DH[5][04] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM To 6:00AM</strong></p>';
+
+DH[5][05] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM To 6:00AM</strong></p>';
+
+DH[5][06] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+
+DH[5][07] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[5][08] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[5][09] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[5][07] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[5][08] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[5][09] = '<div class="image"><div class="container"> <p><img src="https://blackamericaweb.com/wp-content/uploads/sites/10/2021/08/16300726624662-e1630073360186.png?strip=all&quality=80&w=300&crop=0,0,100,140px" alt="" width="126" height="126" /><div class="text"> <p><strong>The Russ Parr Morning Show</strong></p><p><strong>6:00AM - 10:00AM</strong></p>';
+
+DH[5][10] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[5][11] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+
+DH[5][12] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[5][13] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+
+DH[5][14] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>Corine Loraine</strong></p><p><strong>10:00AM - 3:00PM</strong></p>';
+
+DH[5][15] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[5][16] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[5][17] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"> <p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>	';
+
+DH[5][18] = '<div class="image"><div class="container"> <p><img src"https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong> Your Evening With Mallory Jessa </strong></p><p><strong>3:00PM - 7:00PM</strong></p>';
+
+DH[5][19] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[5][20] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[5][21] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[5][22] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[5][23] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/CMMMDMM/download-1.png" alt="" width="126" height="126" /><div class="text"><p><strong>The Sweat Hotal</strong></p><p><strong>7:00PM - 12:00AM</strong></p>';
+
+DH[5][24] = '<div class="image"><div class="container"> <p><img src="https://i.ibb.co/jkcj6MK/A-New-Design-Made-with-Poster-My-Wall-2.jpg" alt="" width="126" height="126" /><div class="text"><p><strong>97.5 R&amp;B</strong></p><p><strong>12:00AM - 6:00AM</strong></p>';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Add more when schedule is known. Note: there may be better ways to do this when information is known.
+
+
+function OnNow() {
+var thedate = new Date();
+var dayofweek = thedate.getDay();
+var hourofday = thedate.getHours();
+// alert(dayofweek+':'+hourofday+'<br />'+DH[dayofweek][hourofday]);
+var showOn = DH[dayofweek][hourofday];
+if (showOn == '') { showOn = thedate+'\n\nNo Show Scheduled'; }
+alert(showOn);
+}
+
+function NowON() {
+var thedate = new Date();
+var dayofweek = thedate.getDay();
+var hourofday = thedate.getHours();
+var showOn = DH[dayofweek][hourofday];
+if (showOn == '') { showOn = thedate+'<p />No Show Scheduled'; }
+document.getElementById('NowOn').innerHTML = showOn;
+}
+</script>
+</head>
+<BODY onLoad="NowON()">
+<!-- Unhide this if table display desired
+<script type="text/javascript">
+document.write(TableStationSchedule())
+</script>
+-->
+<script type="text/javascript">
+document.write(NowON());
+</script>
+<div id='NowOn' onClick="NowON()"></div>
+</body>
